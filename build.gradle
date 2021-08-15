@@ -29,9 +29,7 @@ ext {
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-//	implementation 'org.springframework.cloud:spring-cloud-stream'
 	implementation 'org.springframework.cloud:spring-cloud-stream-binder-kafka'
-//	implementation 'org.springframework.cloud:spring-cloud-stream-binder-kafka-streams'
 	implementation 'org.springframework.cloud:spring-cloud-stream-schema:2.2.1.RELEASE'
 	implementation 'io.confluent:kafka-avro-serializer:' + "${confluentVersion}"
 	implementation 'io.confluent:kafka-schema-registry-client:' + "${confluentVersion}"

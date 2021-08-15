@@ -7,14 +7,10 @@ import org.springframework.messaging.SubscribableChannel;
 import org.springframework.stereotype.Component;
 
 @Component
-public interface UserSink2 {
+public interface KafkaProcessor {
 
-  static String ALERT_INPUT = "alert-input";
-  static String ALERT_OUTPUT = "alert-output";
+  String ALERT_INPUT = "alert-input";
 
   @Input(ALERT_INPUT)
   SubscribableChannel processMessage();
-
-  @Output(ALERT_OUTPUT)
-  MessageChannel outEvent();
 }
