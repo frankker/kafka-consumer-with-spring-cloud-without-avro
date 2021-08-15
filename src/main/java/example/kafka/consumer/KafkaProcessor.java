@@ -1,4 +1,4 @@
-package hatanaka.example.kafka.consumer;
+package example.kafka.consumer;
 
 import org.springframework.cloud.stream.annotation.Input;
 import org.springframework.cloud.stream.annotation.Output;

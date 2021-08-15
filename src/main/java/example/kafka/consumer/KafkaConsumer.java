@@ -1,6 +1,6 @@
-package hatanaka.example.kafka.consumer;
+package example.kafka.consumer;
 
-import hatanaka.example.kafka.dto.AlertDto;
+import example.kafka.dto.AlertDto;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.cloud.stream.annotation.EnableBinding;

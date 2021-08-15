@@ -3,7 +3,7 @@
  *
  * DO NOT EDIT DIRECTLY
  */
-package hatanaka.example.kafka.dto;
+package example.kafka.dto;
 
 import org.apache.avro.generic.GenericArray;
 import org.apache.avro.specific.SpecificData;
@@ -13,24 +13,24 @@ import org.apache.avro.message.BinaryMessageDecoder;
 import org.apache.avro.message.SchemaStore;
 
 @org.apache.avro.specific.AvroGenerated
-public class Employee extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = -3112145379342632014L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Employee\",\"namespace\":\"hatanaka.example.kafka.dto\",\"fields\":[{\"name\":\"id\",\"type\":\"int\"},{\"name\":\"topic\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"name\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}]}");
+public class AlertDto extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
+  private static final long serialVersionUID = -3633436097619681495L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"AlertDto\",\"namespace\":\"example.kafka.dto\",\"fields\":[{\"name\":\"id\",\"type\":\"long\"},{\"name\":\"topic\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"name\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static SpecificData MODEL$ = new SpecificData();
 
-  private static final BinaryMessageEncoder<Employee> ENCODER =
-      new BinaryMessageEncoder<Employee>(MODEL$, SCHEMA$);
+  private static final BinaryMessageEncoder<AlertDto> ENCODER =
+      new BinaryMessageEncoder<AlertDto>(MODEL$, SCHEMA$);
 
-  private static final BinaryMessageDecoder<Employee> DECODER =
-      new BinaryMessageDecoder<Employee>(MODEL$, SCHEMA$);
+  private static final BinaryMessageDecoder<AlertDto> DECODER =
+      new BinaryMessageDecoder<AlertDto>(MODEL$, SCHEMA$);
 
   /**
    * Return the BinaryMessageEncoder instance used by this class.
    * @return the message encoder used by this class
    */
-  public static BinaryMessageEncoder<Employee> getEncoder() {
+  public static BinaryMessageEncoder<AlertDto> getEncoder() {
     return ENCODER;
   }
 
@@ -38,7 +38,7 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
    * Return the BinaryMessageDecoder instance used by this class.
    * @return the message decoder used by this class
    */
-  public static BinaryMessageDecoder<Employee> getDecoder() {
+  public static BinaryMessageDecoder<AlertDto> getDecoder() {
     return DECODER;
   }
 
@@ -47,12 +47,12 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
    * @param resolver a {@link SchemaStore} used to find schemas by fingerprint
    * @return a BinaryMessageDecoder instance for this class backed by the given SchemaStore
    */
-  public static BinaryMessageDecoder<Employee> createDecoder(SchemaStore resolver) {
-    return new BinaryMessageDecoder<Employee>(MODEL$, SCHEMA$, resolver);
+  public static BinaryMessageDecoder<AlertDto> createDecoder(SchemaStore resolver) {
+    return new BinaryMessageDecoder<AlertDto>(MODEL$, SCHEMA$, resolver);
   }
 
   /**
-   * Serializes this Employee to a ByteBuffer.
+   * Serializes this AlertDto to a ByteBuffer.
    * @return a buffer holding the serialized data for this instance
    * @throws java.io.IOException if this instance could not be serialized
    */
@@ -61,17 +61,17 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
   }
 
   /**
-   * Deserializes a Employee from a ByteBuffer.
+   * Deserializes a AlertDto from a ByteBuffer.
    * @param b a byte buffer holding serialized data for an instance of this class
-   * @return a Employee instance decoded from the given buffer
+   * @return a AlertDto instance decoded from the given buffer
    * @throws java.io.IOException if the given bytes could not be deserialized into an instance of this class
    */
-  public static Employee fromByteBuffer(
+  public static AlertDto fromByteBuffer(
       java.nio.ByteBuffer b) throws java.io.IOException {
     return DECODER.decode(b);
   }
 
-  @Deprecated public int id;
+  @Deprecated public long id;
   @Deprecated public java.lang.String topic;
   @Deprecated public java.lang.String name;
 
@@ -80,7 +80,7 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
    * to their default values from the schema.  If that is desired then
    * one should use <code>newBuilder()</code>.
    */
-  public Employee() {}
+  public AlertDto() {}
 
   /**
    * All-args constructor.
@@ -88,7 +88,7 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
    * @param topic The new value for topic
    * @param name The new value for name
    */
-  public Employee(java.lang.Integer id, java.lang.String topic, java.lang.String name) {
+  public AlertDto(java.lang.Long id, java.lang.String topic, java.lang.String name) {
     this.id = id;
     this.topic = topic;
     this.name = name;
@@ -110,7 +110,7 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
   @SuppressWarnings(value="unchecked")
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
-    case 0: id = (java.lang.Integer)value$; break;
+    case 0: id = (java.lang.Long)value$; break;
     case 1: topic = value$ != null ? value$.toString() : null; break;
     case 2: name = value$ != null ? value$.toString() : null; break;
     default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
@@ -121,7 +121,7 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
    * Gets the value of the 'id' field.
    * @return The value of the 'id' field.
    */
-  public int getId() {
+  public long getId() {
     return id;
   }
 
@@ -130,7 +130,7 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
    * Sets the value of the 'id' field.
    * @param value the value to set.
    */
-  public void setId(int value) {
+  public void setId(long value) {
     this.id = value;
   }
 
@@ -169,47 +169,47 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
   }
 
   /**
-   * Creates a new Employee RecordBuilder.
-   * @return A new Employee RecordBuilder
+   * Creates a new AlertDto RecordBuilder.
+   * @return A new AlertDto RecordBuilder
    */
-  public static hatanaka.example.kafka.dto.Employee.Builder newBuilder() {
-    return new hatanaka.example.kafka.dto.Employee.Builder();
+  public static example.kafka.dto.AlertDto.Builder newBuilder() {
+    return new example.kafka.dto.AlertDto.Builder();
   }
 
   /**
-   * Creates a new Employee RecordBuilder by copying an existing Builder.
+   * Creates a new AlertDto RecordBuilder by copying an existing Builder.
    * @param other The existing builder to copy.
-   * @return A new Employee RecordBuilder
+   * @return A new AlertDto RecordBuilder
    */
-  public static hatanaka.example.kafka.dto.Employee.Builder newBuilder(hatanaka.example.kafka.dto.Employee.Builder other) {
+  public static example.kafka.dto.AlertDto.Builder newBuilder(example.kafka.dto.AlertDto.Builder other) {
     if (other == null) {
-      return new hatanaka.example.kafka.dto.Employee.Builder();
+      return new example.kafka.dto.AlertDto.Builder();
     } else {
-      return new hatanaka.example.kafka.dto.Employee.Builder(other);
+      return new example.kafka.dto.AlertDto.Builder(other);
     }
   }
 
   /**
-   * Creates a new Employee RecordBuilder by copying an existing Employee instance.
+   * Creates a new AlertDto RecordBuilder by copying an existing AlertDto instance.
    * @param other The existing instance to copy.
-   * @return A new Employee RecordBuilder
+   * @return A new AlertDto RecordBuilder
    */
-  public static hatanaka.example.kafka.dto.Employee.Builder newBuilder(hatanaka.example.kafka.dto.Employee other) {
+  public static example.kafka.dto.AlertDto.Builder newBuilder(example.kafka.dto.AlertDto other) {
     if (other == null) {
-      return new hatanaka.example.kafka.dto.Employee.Builder();
+      return new example.kafka.dto.AlertDto.Builder();
     } else {
-      return new hatanaka.example.kafka.dto.Employee.Builder(other);
+      return new example.kafka.dto.AlertDto.Builder(other);
     }
   }
 
   /**
-   * RecordBuilder for Employee instances.
+   * RecordBuilder for AlertDto instances.
    */
   @org.apache.avro.specific.AvroGenerated
-  public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<Employee>
-    implements org.apache.avro.data.RecordBuilder<Employee> {
+  public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<AlertDto>
+    implements org.apache.avro.data.RecordBuilder<AlertDto> {
 
-    private int id;
+    private long id;
     private java.lang.String topic;
     private java.lang.String name;
 
@@ -222,7 +222,7 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(hatanaka.example.kafka.dto.Employee.Builder other) {
+    private Builder(example.kafka.dto.AlertDto.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.id)) {
         this.id = data().deepCopy(fields()[0].schema(), other.id);
@@ -239,10 +239,10 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
     }
 
     /**
-     * Creates a Builder by copying an existing Employee instance
+     * Creates a Builder by copying an existing AlertDto instance
      * @param other The existing instance to copy.
      */
-    private Builder(hatanaka.example.kafka.dto.Employee other) {
+    private Builder(example.kafka.dto.AlertDto other) {
       super(SCHEMA$);
       if (isValidValue(fields()[0], other.id)) {
         this.id = data().deepCopy(fields()[0].schema(), other.id);
@@ -262,7 +262,7 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
       * Gets the value of the 'id' field.
       * @return The value.
       */
-    public int getId() {
+    public long getId() {
       return id;
     }
 
@@ -272,7 +272,7 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
       * @param value The value of 'id'.
       * @return This builder.
       */
-    public hatanaka.example.kafka.dto.Employee.Builder setId(int value) {
+    public example.kafka.dto.AlertDto.Builder setId(long value) {
       validate(fields()[0], value);
       this.id = value;
       fieldSetFlags()[0] = true;
@@ -292,7 +292,7 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
       * Clears the value of the 'id' field.
       * @return This builder.
       */
-    public hatanaka.example.kafka.dto.Employee.Builder clearId() {
+    public example.kafka.dto.AlertDto.Builder clearId() {
       fieldSetFlags()[0] = false;
       return this;
     }
@@ -311,7 +311,7 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
       * @param value The value of 'topic'.
       * @return This builder.
       */
-    public hatanaka.example.kafka.dto.Employee.Builder setTopic(java.lang.String value) {
+    public example.kafka.dto.AlertDto.Builder setTopic(java.lang.String value) {
       validate(fields()[1], value);
       this.topic = value;
       fieldSetFlags()[1] = true;
@@ -331,7 +331,7 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
       * Clears the value of the 'topic' field.
       * @return This builder.
       */
-    public hatanaka.example.kafka.dto.Employee.Builder clearTopic() {
+    public example.kafka.dto.AlertDto.Builder clearTopic() {
       topic = null;
       fieldSetFlags()[1] = false;
       return this;
@@ -351,7 +351,7 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
       * @param value The value of 'name'.
       * @return This builder.
       */
-    public hatanaka.example.kafka.dto.Employee.Builder setName(java.lang.String value) {
+    public example.kafka.dto.AlertDto.Builder setName(java.lang.String value) {
       validate(fields()[2], value);
       this.name = value;
       fieldSetFlags()[2] = true;
@@ -371,7 +371,7 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
       * Clears the value of the 'name' field.
       * @return This builder.
       */
-    public hatanaka.example.kafka.dto.Employee.Builder clearName() {
+    public example.kafka.dto.AlertDto.Builder clearName() {
       name = null;
       fieldSetFlags()[2] = false;
       return this;
@@ -379,10 +379,10 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
 
     @Override
     @SuppressWarnings("unchecked")
-    public Employee build() {
+    public AlertDto build() {
       try {
-        Employee record = new Employee();
-        record.id = fieldSetFlags()[0] ? this.id : (java.lang.Integer) defaultValue(fields()[0]);
+        AlertDto record = new AlertDto();
+        record.id = fieldSetFlags()[0] ? this.id : (java.lang.Long) defaultValue(fields()[0]);
         record.topic = fieldSetFlags()[1] ? this.topic : (java.lang.String) defaultValue(fields()[1]);
         record.name = fieldSetFlags()[2] ? this.name : (java.lang.String) defaultValue(fields()[2]);
         return record;
@@ -395,8 +395,8 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
   }
 
   @SuppressWarnings("unchecked")
-  private static final org.apache.avro.io.DatumWriter<Employee>
-    WRITER$ = (org.apache.avro.io.DatumWriter<Employee>)MODEL$.createDatumWriter(SCHEMA$);
+  private static final org.apache.avro.io.DatumWriter<AlertDto>
+    WRITER$ = (org.apache.avro.io.DatumWriter<AlertDto>)MODEL$.createDatumWriter(SCHEMA$);
 
   @Override public void writeExternal(java.io.ObjectOutput out)
     throws java.io.IOException {
@@ -404,8 +404,8 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
   }
 
   @SuppressWarnings("unchecked")
-  private static final org.apache.avro.io.DatumReader<Employee>
-    READER$ = (org.apache.avro.io.DatumReader<Employee>)MODEL$.createDatumReader(SCHEMA$);
+  private static final org.apache.avro.io.DatumReader<AlertDto>
+    READER$ = (org.apache.avro.io.DatumReader<AlertDto>)MODEL$.createDatumReader(SCHEMA$);
 
   @Override public void readExternal(java.io.ObjectInput in)
     throws java.io.IOException {
@@ -417,7 +417,7 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
   @Override public void customEncode(org.apache.avro.io.Encoder out)
     throws java.io.IOException
   {
-    out.writeInt(this.id);
+    out.writeLong(this.id);
 
     out.writeString(this.topic);
 
@@ -430,7 +430,7 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
   {
     org.apache.avro.Schema.Field[] fieldOrder = in.readFieldOrderIfDiff();
     if (fieldOrder == null) {
-      this.id = in.readInt();
+      this.id = in.readLong();
 
       this.topic = in.readString();
 
@@ -440,7 +440,7 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
       for (int i = 0; i < 3; i++) {
         switch (fieldOrder[i].pos()) {
         case 0:
-          this.id = in.readInt();
+          this.id = in.readLong();
           break;
 
         case 1:
