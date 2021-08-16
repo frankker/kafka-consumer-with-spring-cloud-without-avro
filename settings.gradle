@@ -3,4 +3,4 @@ pluginManagement {
 		gradlePluginPortal()
 	}
 }
-rootProject.name = 'Kafka Consumer Without Avro'
+rootProject.name = 'Kafka Consumer With Spring Cloud With Avro'

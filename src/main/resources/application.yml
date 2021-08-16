@@ -18,7 +18,7 @@ spring:
           concurrency: 3
           binder: kafka
         asset-input:
-          destination: asset002
+          destination: asset003
           content-type: application/*+avro
           group: group-1
           concurrency: 3
