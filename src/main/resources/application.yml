@@ -41,6 +41,14 @@ spring:
         binder:
           brokers: localhost:9092
           configuration:
+            security:
+              protocol: SASL_SSL
+            sasl:
+              mechanism: SCRAM-SHA-512
+              jaas:
+                config: >
+                  org.apache.kafka.common.security.scram.ScramLoginModule
+                  required username="${KAFKA_USERNAME:USERNAME}" password="${KAFKA_PASSWORD:PASSWORD}";
             value:
               deserializer: org.apache.kafka.common.serialization.StringDeserializer
               serializer: org.apache.kafka.common.serialization.StringSerializer
